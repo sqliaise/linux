@@ -16,6 +16,17 @@
 		serial0 = &uart1;
 		serial1 = &uart0;
 	};
+	rpi3_motor {
+		compatible = "rpi3_motor";
+		motor1_pins = <&gpio 5 1>, <&gpio 13 1>, <&gpio 19 1>, <&gpio 26 1>;
+		motor2_pins = <&gpio 12 1>, <&gpio 16 1>, <&gpio 20 1>, <&gpio 21 1>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&pwm0_gpio18>;
+	};
+};
+
+&pwm {
+	status = "okay";
 };
 
 &gpio {
